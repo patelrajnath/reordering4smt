@@ -1,0 +1,23 @@
+<Anuvadaksh-Consortia>
+<document-Name>New Text Document.xml</document-Name>
+<Date>16 October 2012</Date>
+<Time>11:50 A.M.</Time>
+<Login>aaa</Login>
+<Source-Langage>English</Source-Langage>
+<Target-Langage>Hindi</Target-Langage>
+<domain>Tourism</domain>
+<Body>
+<Input-Text>
+Jaipur , popularly known as the Pink City , is the capital of Rajasthan state , India. It is beautiful.
+
+<Input sentence="01">
+It is beautiful.
+<Reordered></Reordered></Input>
+
+<Input sentence="02">
+Jaipur , popularly known as the Pink City , is the capital of Rajasthan state , India.
+<Reordered></Reordered></Input>
+
+</Input-Text>
+</Body>
+</Anuvadaksh-Consortia>

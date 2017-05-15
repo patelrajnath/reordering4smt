@@ -68,7 +68,7 @@ it takes xml file as input, extract sentences inside the "input" tag, reorders i
 	<Input sentence="02">Jaipur , popularly known as the Pink City , is the capital of Rajasthan state , India.<Reordered>Jaipur , popularly the Pink City as known , Rajasthan state , It beautiful is India . of the capital is .
 </Reordered></Input>
 	
-### NOTE: Intermediate outputs will be saved "cdacm.rosy-v1.0/tmp"
+NOTE: Intermediate outputs will be saved "cdacm.rosy-v1.0/tmp"
 
 ### PROGRAMMATIC USE
 
@@ -79,35 +79,60 @@ You need to make a call to cdacm.reorder-text.sh and cdacm.reorder-xml.sh from y
 INSIDE
 
 -cdacm-kbcs.rosy-v1.0
+
 	-research //directory containing publications
+
 		-input.txt //sample input text file
+
 		-input.xml // sample input xml file
+
 	-tools //directory containing all other tools
+
 		-grammar //containing trained model for English parser(Stanford)
+
 			-englishPCFG.ser.gz //model
+
 		-Parse //directory containing Recursive Decent Parser
+
 			-RecDescent.pm //Recursive Decent Parser
+
 		-cdacm-reorder.pl //perl script containing reordering rules
-		-changeAtt.py // To change the attribute value in xml files			-compare2files.py //To match to file at word level. In English parsing process, parser changes some words, like colour-> color.
+
+		-changeAtt.py // To change the attribute value in xml files			
+		
+		-compare2files.py //To match to file at word level. In English parsing process, parser changes some words, like colour-> color.
+
 		-convert.py // convert the parsed sentence output, compatible to "cdacm-reorder.pl"
+		
 		-getAttValue.py// To get input text from xml file
+
 		-lexparser.sh // Its shell script to run "Stanford Parser"
+
 		-runstanfordparser.sh // To run "lexparser.sh"
+
 		-stanford-parser.jar // Stanford Parsing system
+
 	-cdacm.reorder-text.sh //shell script to initiate reordering for text file
+
 	-cdacm.reorder-xml.sh  //shell script to initiate reordering for xml file
+
 	-sample-input.txt //sample input text file
+
 	-sample-input.xml //sample input xml file
+
 	-README// This file
 	
 ### INPUT-OUTPUT SPECIFICATION
 
 System takes input in two format
+
 -text files //Plain English text, sentences separated by newline. Sample is given as "sample-input.txt".
+
 -xml file //Sample is given as "sample-input.xml". For any change in xml format, you need to change "changeAtt.py" and "getAttValue.py" accordingly
 
 ### System Output
 -For text input, final reordered output will be stored in "filename.reordered.txt. For Example if input file is "/some/path/input.txt", then output will be stored in "/some/path/input.reordered.txt".
+
 -For xml input, there should be empty "Reordered" sub-tag within "Input" tag. Reordered output will be stored within "Reordered" tag.
 
 ### CONTRIBUTORS
